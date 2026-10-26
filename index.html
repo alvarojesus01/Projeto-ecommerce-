@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TechZone: tecnologia para facilitar o seu dia.">
+  <title>TechZone | Tecnologia para você</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="topo">
+    <a class="logo" href="#" aria-label="TechZone, página inicial">Tech<span>Zone</span></a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu-principal">☰ <span class="sr-only">Abrir menu</span></button>
+    <nav id="menu-principal" class="menu" aria-label="Menu principal">
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#frete">Calcular frete</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-conteudo">
+        <p class="etiqueta">TECNOLOGIA • INOVAÇÃO • QUALIDADE</p>
+        <h1>Seu próximo nível começa aqui.</h1>
+        <p>Encontre acessórios e eletrônicos para estudar, trabalhar e curtir seus momentos favoritos.</p>
+        <a class="botao" href="#produtos">Explorar produtos</a>
+      </div>
+      <div class="hero-arte" role="img" aria-label="Ilustração decorativa de dispositivos eletrônicos">
+        <div class="orb orb-1"></div><div class="orb orb-2"></div>
+        <div class="device laptop"><div class="screen"></div><div class="base"></div></div>
+        <div class="device phone"><div class="phone-screen"></div></div>
+      </div>
+    </section>
+
+    <section class="beneficios" aria-label="Benefícios da loja">
+      <article><span aria-hidden="true">🚚</span><div><h2>Entrega prática</h2><p>Consulte o frete para sua região.</p></div></article>
+      <article><span aria-hidden="true">🛡️</span><div><h2>Compra segura</h2><p>Seus dados tratados com cuidado.</p></div></article>
+      <article><span aria-hidden="true">💬</span><div><h2>Atendimento</h2><p>Estamos aqui para ajudar.</p></div></article>
+    </section>
+
+    <section class="secao produtos" id="produtos">
+      <div class="secao-titulo"><div><p class="etiqueta">ESCOLHAS DA SEMANA</p><h2>Vitrine de produtos</h2></div><p>Tecnologia que combina com você.</p></div>
+      <div class="grade-produtos">
+        <article class="produto">
+          <img src="img/fone.svg" alt="Fone de ouvido sem fio preto" loading="lazy">
+          <div class="produto-info"><span class="categoria">Áudio</span><h3>Fone Bluetooth</h3><p class="descricao">Som envolvente e conexão sem fio.</p><p class="preco">R$ 129,90</p><button class="botao botao-secundario adicionar" data-produto="Fone Bluetooth">Adicionar ao carrinho</button></div>
+        </article>
+        <article class="produto">
+          <img src="img/teclado.svg" alt="Teclado mecânico compacto com teclas coloridas" loading="lazy">
+          <div class="produto-info"><span class="categoria">Acessórios</span><h3>Teclado Mecânico</h3><p class="descricao">Conforto para estudar e jogar.</p><p class="preco">R$ 219,90</p><button class="botao botao-secundario adicionar" data-produto="Teclado Mecânico">Adicionar ao carrinho</button></div>
+        </article>
+        <article class="produto">
+          <img src="img/mouse.svg" alt="Mouse sem fio preto com detalhes azuis" loading="lazy">
+          <div class="produto-info"><span class="categoria">Acessórios</span><h3>Mouse Sem Fio</h3><p class="descricao">Precisão e liberdade de movimento.</p><p class="preco">R$ 89,90</p><button class="botao botao-secundario adicionar" data-produto="Mouse Sem Fio">Adicionar ao carrinho</button></div>
+        </article>
+        <article class="produto">
+          <img src="img/caixa.svg" alt="Caixa de som portátil azul-escura" loading="lazy">
+          <div class="produto-info"><span class="categoria">Áudio</span><h3>Caixa de Som</h3><p class="descricao">Leve sua música para qualquer lugar.</p><p class="preco">R$ 159,90</p><button class="botao botao-secundario adicionar" data-produto="Caixa de Som">Adicionar ao carrinho</button></div>
+        </article>
+        <article class="produto">
+          <img src="img/relogio.svg" alt="Relógio inteligente com pulseira preta" loading="lazy">
+          <div class="produto-info"><span class="categoria">Wearables</span><h3>Smartwatch</h3><p class="descricao">Informações úteis no seu pulso.</p><p class="preco">R$ 249,90</p><button class="botao botao-secundario adicionar" data-produto="Smartwatch">Adicionar ao carrinho</button></div>
+        </article>
+        <article class="produto">
+          <img src="img/carregador.svg" alt="Carregador rápido USB-C branco" loading="lazy">
+          <div class="produto-info"><span class="categoria">Energia</span><h3>Carregador USB-C</h3><p class="descricao">Carregamento rápido no dia a dia.</p><p class="preco">R$ 69,90</p><button class="botao botao-secundario adicionar" data-produto="Carregador USB-C">Adicionar ao carrinho</button></div>
+        </article>
+      </div>
+      <p id="mensagem-carrinho" class="mensagem" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="secao frete-contato" id="frete">
+      <div class="painel">
+        <p class="etiqueta">ENTREGA</p><h2>Calcule seu frete</h2>
+        <p>Digite o CEP para receber uma estimativa demonstrativa.</p>
+        <form id="form-frete">
+          <label for="cep">CEP</label>
+          <div class="linha-frete"><input id="cep" name="cep" inputmode="numeric" pattern="[0-9]{5}-?[0-9]{3}" placeholder="00000-000" required aria-describedby="ajuda-cep"><button class="botao" type="submit">Calcular</button></div>
+          <small id="ajuda-cep">Digite 8 números, com ou sem hífen.</small>
+        </form>
+        <p id="resultado-frete" class="resultado" role="status" aria-live="polite"></p>
+      </div>
+      <div class="painel contato" id="contato">
+        <p class="etiqueta">FALE COM A GENTE</p><h2>Entre em contato</h2>
+        <p>Envie sua dúvida e nossa equipe poderá ajudar.</p>
+        <form id="form-contato">
+          <label for="nome">Nome</label><input id="nome" name="nome" type="text" minlength="2" autocomplete="name" placeholder="Seu nome" required>
+          <label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+          <label for="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" rows="3" minlength="10" placeholder="Como podemos ajudar?" required></textarea>
+          <button class="botao" type="submit">Enviar mensagem</button>
+          <p id="resultado-contato" class="mensagem" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <a class="logo" href="#inicio">Tech<span>Zone</span></a>
+    <p>Projeto acadêmico de landing page • 2026</p>
+    <p>© 2026 TechZone. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
